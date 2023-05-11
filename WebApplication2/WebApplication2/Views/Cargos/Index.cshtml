@@ -1,0 +1,79 @@
+﻿@*INDEX CARGOS*@
+@model List<CargosModel>
+
+@{
+    ViewData["Title"] = "Cargos";
+}
+
+<div class="text-center">
+    
+    @*Titulo*@
+    <h2 class="display-4"> Cargos </h2>
+    <br/>
+    
+    @*Botão Cadastro*@
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a role="button" class="btn btn-outline-success" asp-controller="Cargos" asp-action="Cadastrar">Cadastrar Cargo</a>
+    </div>
+
+    <br />
+
+    @*Janela de Notificação*@
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <br />
+  
+    @*Tabela de registro de Cargos*@
+    <table class="table" id="table-contatos">
+        <thead>
+            @*Lista de Dados Cargos*@
+            <tr>
+                <th scope="col">#</th>              @*ID*@
+                <th scope="col">Nome</th>           @*Nome*@
+                <th scope="col">Descrição</th>      @*Descricao*@
+                <th scope="col">Piso Salarial</th>  @*Piso Salarial*@
+                <th scope="col"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @*Função para Exibicao de diversos Cargos*@
+            @if(Model != null && Model.Any())
+            {
+                foreach(CargosModel cargo in Model)
+                {
+                    <tr>
+                        <th scope="row">@cargo.Id</th>
+                        <td>@cargo.Nome</td>
+                        <td>@cargo.Descrição</td>
+                        <td>R$ @cargo.Salario</td>
+                        <td>
+                            @*Botoes Alterar e Excluir*@
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-outline-primary" asp-route-id="@cargo.Id" asp-controller="Cargos" asp-action="Alterar"> Alterar</a>
+                                <a role="button" class="btn btn-outline-danger" asp-route-id="@cargo.Id" asp-controller="Cargos" asp-action="DeletarConfirmacao"> Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@*INDEX CARGOS*@
+
+

@@ -1,0 +1,54 @@
+﻿@*Cadastrar Funcionario*@
+
+@model FuncionarioModel
+@{
+    ViewData["Title"] = "Cadastrar Funcionario";
+}
+
+<div class="text-center">
+
+    @*Titulo*@
+    <h2 class="display-5"> Cadastrar Funcionario </h2>
+
+</div>
+
+@*layout de cadastro de Cargos*@
+
+<form asp-controller="Funcionario" asp-action="Cadastrar" method="post">
+
+    @*Matricula*@
+    <div class="form-group">
+        <label for="matricula">Matricula</label>
+        <input type="text" asp-for="Matricula" class="form-control">
+        @Html.ValidationMessageFor(x => x.Matricula)
+    </div>
+
+    @*CPF*@
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" asp-for="CPF" class="form-control">
+        @Html.ValidationMessageFor(x => x.CPF)
+    </div>
+
+    @*Nome*@
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    @*Cargo*@
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" asp-for="Cargo" class="form-control">
+        @Html.ValidationMessageFor(x => x.Cargo)
+    </div>
+
+    <br />
+
+    @*Bototes Adicionar/Voltar*@
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary" asp-controller="Funcionario" asp-action="Index" role="button">Voltar</a>
+</form>
+
+@*Cadastrar Funcionario*@

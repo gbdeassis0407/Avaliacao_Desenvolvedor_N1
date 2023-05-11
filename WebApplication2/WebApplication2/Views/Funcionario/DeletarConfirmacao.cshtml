@@ -1,0 +1,18 @@
+﻿@*Deletar Confirmacao Funcionario*@
+
+@model FuncionarioModel
+
+@{
+    ViewData["Title"] = "Confirmação de Deletar Funcionario";
+}
+
+@*Layout de Confirmacao de Deletar Funcionario*@
+<div class="text-center">
+    <h3>Realmente deseja apagar o Funcionario (@Model.Nome)?</h3>
+
+    @*botoes cancelar/confirmar*@
+    <a class="btn btn-outline-primary" role="button" asp-controller="Funcionario" asp-action="Index"> Cancelar</a>
+    <a class="btn btn-outline-danger" role="button" asp-controller="Funcionario" asp-action="Apagar" asp-route-id="@Model.Id" > Confirmar</a>
+</div>
+
+@*Deletar Confirmacao Funcionario*@

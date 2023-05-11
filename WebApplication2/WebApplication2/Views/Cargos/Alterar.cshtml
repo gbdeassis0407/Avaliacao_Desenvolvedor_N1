@@ -1,0 +1,49 @@
+﻿@*Alterar Cargo*@
+@model CargosModel
+
+@{
+    ViewData["Title"] = "Alterar Cargos";
+}
+
+<div class="text-center">
+
+    @*Titulo*@
+    <h2 class="display-5"> Alterar Cargo </h2>
+
+</div>
+
+@*layout de Editar os Cargos*@
+<form asp-controller="Cargos" asp-action="Alterar" method="post">
+
+    @*ID Invisivel*@
+    <input type="hidden" asp-for="Id" />
+
+    @*Cargo*@
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" asp-for="Nome" class="form-control">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    @*Salario*@
+    <div class="form-group">
+        <label for="salario">Salário</label>
+        <input type="text" asp-for="Salario" class="form-control" aria-label="Close">
+        @Html.ValidationMessageFor(x => x.Salario)
+    </div>
+
+    @*Descricao*@
+    <div class="form-group">
+        <label for="descrição">Descrição</label>
+        <input type="text" asp-for="Descrição" class="form-control">
+        @Html.ValidationMessageFor(x => x.Descrição)
+    </div>
+
+    <br />
+
+    @*Botoes Alterar/Voltar*@
+    <button type="submit" class="btn btn-primary">Alterar</button>
+    <a class="btn btn-secondary" asp-controller="Cargos" asp-action="Index" role="button">Voltar</a>
+</form>
+
+@*Alterar Cargo*@

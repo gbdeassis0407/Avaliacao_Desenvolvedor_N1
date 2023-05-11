@@ -1,0 +1,18 @@
+﻿@*Deletar Confirmacao Cargo*@
+
+@model CargosModel
+
+@{
+    ViewData["Title"] = "Confirmação de Deletar Cargo";
+}
+
+@*Layout de Confirmacao de Deletar Cargos*@
+<div class="text-center">
+    <h3>Realmente deseja apagar o Cargo (@Model.Nome)?</h3>
+
+    @*botoes cancelar/confirmar*@
+    <a class="btn btn-outline-primary" role="button" asp-controller="Cargos" asp-action="Index"> Cancelar</a>
+    <a class="btn btn-outline-danger" role="button" asp-controller="Cargos" asp-action="Apagar" asp-route-id="@Model.Id"> Confirmar</a>
+</div>
+
+@*Deletar Confirmacao Cargo*@

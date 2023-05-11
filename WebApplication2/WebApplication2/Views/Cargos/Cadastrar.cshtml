@@ -1,0 +1,47 @@
+﻿@*Cadastrar Cargos*@
+
+@model CargosModel
+@{
+    ViewData["Title"] = "Cadastrar Cargo";
+}
+
+<div class="text-center">
+
+    @*Titulo*@
+    <h2 class="display-5"> Cadastrar Cargos </h2>
+
+</div>
+
+@*layout de cadastro de Cargos*@
+
+<form asp-controller="Cargos" asp-action="Cadastrar" method="post">
+
+    @*Cargo*@
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" asp-for="Nome" class="form-control">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    @*salario*@
+    <div class="form-group">
+        <label for="salario">Salário</label>
+        <input type="text" asp-for="Salario" class="form-control" aria-label="Close">
+        @Html.ValidationMessageFor(x => x.Salario)
+    </div>
+
+    @*Descricap*@
+    <div class="form-group">
+        <label for="descrição">Descrição</label>
+        <input type="text" asp-for="Descrição" class="form-control">
+        @Html.ValidationMessageFor(x => x.Descrição)
+    </div>
+
+    <br />
+
+    @*Bototes Adicionar/Voltar*@
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary" asp-controller="Cargos" asp-action="Index" role="button">Voltar</a>
+ </form>
+
+@*Cadastrar Cargos*@
