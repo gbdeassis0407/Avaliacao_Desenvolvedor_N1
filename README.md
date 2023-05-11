@@ -17,7 +17,7 @@ Implemente a solução descrita nas instruções
 Tente utilizar algum padrão de projeto que julgue interessante.
 
 ## Você pode:
-Utilizar pacotes NuGet (https://www.nuget.oral) que julgar necessário
+Utilizar pacotes NuGet (https://www.nuget.org) que julgar necessário
 No acesso à banco de dados, você pode usar algum ORM: Entity Framework, Dapper ou outro, assim como fazer manualmente utilizando ADO
 Utilizar a internet para consulta
 
